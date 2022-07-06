@@ -1,9 +1,23 @@
 package com.project.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 public class Attendance {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	
+	@Column(name="present_days")
 	private int present_days;
+	
+	@Column(name="absent_days")
 	private int absent_days;
+	
+	@Column(name="total_days")
 	private int total_days;
 	
 	

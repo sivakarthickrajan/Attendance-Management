@@ -6,7 +6,7 @@
       
       <property name = "hibernate.connection.driver_class">org.postgresql.Driver</property>
       
-      <property name = "hibernate.connection.url">jdbc:postgresql://localhost:5432/employee_db</property>
+      <property name = "hibernate.connection.url">jdbc:postgresql://localhost:5432/attendance_db</property>
       
       <property name = "hibernate.connection.username">postgres</property>
       
@@ -18,8 +18,9 @@
       
       <property name="hibernate.show_sql">true</property>
       
-	  <mapping class="com.project.student"/>	 
+	  <mapping class="com.project.model.Student"/>	
+	  <mapping class="com.project.model.City"/>	
+	  <mapping class="com.project.model.Qualification"/>	 
 	  	  
-      
    </session-factory>
 </hibernate-configuration>

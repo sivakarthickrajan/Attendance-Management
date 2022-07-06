@@ -1,9 +1,29 @@
 package com.project.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="course")
 public class Course {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="course_generator")
+	@SequenceGenerator(name="course_generator",sequenceName="course_seq",allocationSize=1)
 	private int course_id;
+	
+	@Column(name="course_name")
 	private String course_name;
+	
+	@Column(name="fees")
 	private int fees;
+	
+	@Column(name="duration_month")
 	private int duration_month;
 	
 	

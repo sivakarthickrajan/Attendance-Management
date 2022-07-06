@@ -2,12 +2,13 @@ package com.project.model;
 
 import java.util.Date;
 
-
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;	
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 
@@ -25,15 +26,26 @@ public class Student {
 	@Column(name="age")
 	private int age;
 	
-	@Column(name="qualification")
-	private int qualification;
+	
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="qualification")
+	private Qualification qualification;
 	
 	
 	
-	
+	@Column(name="dob")
 	private Date dob;
+	
+	@Column(name="mobile")
 	private int mobile;
-	private int city;
+	
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="city", nullable=false)
+	private City city;
+	
+//	@OneToOne(cascade=CascadeType.ALL)
+//	@Join
+	@Column(name="attendance")
 	private int attendance;
 	
 	public int getStudent_id() {
@@ -54,10 +66,10 @@ public class Student {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	public int getQualification() {
+	public Qualification getQualification() {
 		return qualification;
 	}
-	public void setQualification(int qualification) {
+	public void setQualification(Qualification qualification) {
 		this.qualification = qualification;
 	}
 	
@@ -73,10 +85,10 @@ public class Student {
 	public void setMobile(int mobile) {
 		this.mobile = mobile;
 	}
-	public int getCity() {
+	public City getCity() {
 		return city;
 	}
-	public void setCity(int city) {
+	public void setCity(City city) {
 		this.city = city;
 	}
 	public int getAttendance() {

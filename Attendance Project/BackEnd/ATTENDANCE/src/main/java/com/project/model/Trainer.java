@@ -1,10 +1,31 @@
 package com.project.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="trainer")
 public class Trainer {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE) 
 	private int trainer_id; 
+	
+	@Column(name="trainer_name")
 	private String trainer_name;
+	
+	@Column(name="mobile")
 	private int mobile;
-	private int no_of_stu_handiling;
+	
+	@Column(name="no_of_stu_handling")
+	private int no_of_stu_handling;
+	
+	
+	
 	private int city;
 	private int attendance;
 	
@@ -29,11 +50,11 @@ public class Trainer {
 	public void setMobile(int mobile) {
 		this.mobile = mobile;
 	}
-	public int getNo_of_stu_handiling() {
-		return no_of_stu_handiling;
+	public int getNo_of_stu_handling() {
+		return no_of_stu_handling;
 	}
-	public void setNo_of_stu_handiling(int no_of_stu_handiling) {
-		this.no_of_stu_handiling = no_of_stu_handiling;
+	public void setNo_of_stu_handiling(int no_of_stu_handling) {
+		this.no_of_stu_handling = no_of_stu_handling;
 	}
 	public int getCity() {
 		return city;

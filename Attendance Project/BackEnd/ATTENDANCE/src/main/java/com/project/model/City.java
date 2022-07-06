@@ -1,7 +1,24 @@
 package com.project.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="city")
 public class City {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="city_generator")
+	@SequenceGenerator(name="city_generator",sequenceName="city_seq",allocationSize=0) 
 	private int id;
+	
+	
+	@Column(name="city")
 	private String city;
 	
 	
