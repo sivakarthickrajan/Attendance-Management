@@ -1,0 +1,27 @@
+.navbar{
+    background-color: rgb(18, 18, 136);
+    height: 1%;
+    width: 100%;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+}
+.logo_img{
+    height:3rem;
+    padding-left: 10px;
+    padding-top: 10px;
+    
+}
+.nav_list{
+    
+    list-style-type:none;
+    color: white;
+    font-size: x-large;
+    display: flex;
+    justify-content: flex-end;
+    text-decoration:none;
+}
+li{
+    padding-left: 10px;
+    padding-right: 10px;
+}
