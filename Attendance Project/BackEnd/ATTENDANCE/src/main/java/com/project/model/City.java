@@ -1,11 +1,13 @@
 package com.project.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -13,13 +15,17 @@ import jakarta.persistence.Table;
 public class City {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator="city_generator")
-	@SequenceGenerator(name="city_generator",sequenceName="city_seq",allocationSize=0) 
 	private int id;
 	
 	
 	@Column(name="city")
 	private String city;
+	
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="city")
+	private Set<Student> students= new HashSet();
+	
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="city")
+	private Set<Employee> employees= new HashSet();
 	
 	
 	
@@ -36,6 +42,20 @@ public class City {
 	public void setCity(String city) {
 		this.city = city;
 	}
+	public Set<Student> getStudents() {
+		return students;
+	}
+	public void setStudents(Set<Student> students) {
+		this.students = students;
+	}
+	public Set<Employee> getEmployees() {
+		return employees;
+	}
+	public void setEmployees(Set<Employee> employees) {
+		this.employees = employees;
+	}
+	
+	
 	
 	
 

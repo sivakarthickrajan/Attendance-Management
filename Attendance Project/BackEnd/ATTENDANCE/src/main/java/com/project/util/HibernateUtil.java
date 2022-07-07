@@ -7,6 +7,8 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
 import com.project.model.City;
+import com.project.model.Employee;
+import com.project.model.Gender;
 import com.project.model.Qualification;
 import com.project.model.Student;
 
@@ -22,6 +24,9 @@ public class HibernateUtil {
 				configuration.addAnnotatedClass(Student.class);
 				configuration.addAnnotatedClass(City.class);
 				configuration.addAnnotatedClass(Qualification.class);
+				configuration.addAnnotatedClass(Gender.class);
+				configuration.addAnnotatedClass(Employee.class);
+				
 	
 				System.out.println("Hibernate configuration loaded Successfully");
 				

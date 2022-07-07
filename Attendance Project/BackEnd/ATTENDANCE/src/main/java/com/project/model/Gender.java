@@ -11,56 +11,56 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="qualification")
-public class Qualification {
-	
-	
+@Table(name="gender")
+public class Gender {
 	
 	@Id
 	private int id;
 	
-	@Column(name="qualification")
-	private String qualification;
+	@Column(name="gender")
+	private String gender;
 	
-	@OneToMany(cascade=CascadeType.ALL, mappedBy="qualification")
-	private Set<Student> students= new HashSet();
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="gender")
+	private Set<Student> students=new HashSet();
 	
-	@OneToMany(cascade=CascadeType.ALL, mappedBy="qualification")
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="gender")
 	private Set<Employee> employees= new HashSet();
 	
 	
 	
 	
-	public int getQualification_id() {
+
+	public int getId() {
 		return id;
 	}
-	public void setQualification_id(int id) {
+
+	public void setId(int id) {
 		this.id = id;
 	}
-	public String getQualification() {
-		return qualification;
+
+	public String getGender() {
+		return gender;
 	}
-	public void setQualification(String qualification) {
-		this.qualification = qualification;
+
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
+
 	public Set<Student> getStudents() {
 		return students;
 	}
+
 	public void setStudents(Set<Student> students) {
 		this.students = students;
 	}
+
 	public Set<Employee> getEmployees() {
 		return employees;
 	}
+
 	public void setEmployees(Set<Employee> employees) {
 		this.employees = employees;
 	}
-
-	
-	
-	
-	
-	
 	
 	
 }
